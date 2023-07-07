@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  db-pg:
+    # Di sini kita akan menggunakan image standard dari dockerhub
+    # yang bernama "postgres" dan tag bernama "15.1-alpine"
+    image: postgres:15.3-alpine
+    # Berdasarkan Dockerhub, image ini membutuhkan sebuah environment variable
+    # Dengan nama POSTGRES_PASSWORD
+    environment:
+      POSTGRES_DB: database_electra_tech_server_production
+      POSTGRES_PASSWORD: postgres
+    # Kita akan membuat port 5432 yang ada pada container di-"salurkan" ke port 5432 di host
+    ports:
+      - 5432:5432
+
+  node_app:
+    container_name: node_app
+    build: ./
+    image: electra-tech-api
+    ports:
+      - "80:3000"
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+    depends_on:
+      - db-pg
