@@ -1,0 +1,25 @@
+{
+  "name": "electra-tech-api",
+  "version": "1.0.0",
+  "description": "This is REST API for electra tech",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon bin/www",
+    "start": "node bin/www",
+    "test": "npx jest --runInBand --detectOpenHandles --forceExit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:tianbuyung/electra-tech.git"
+  },
+  "keywords": [
+    "node.js",
+    "express"
+  ],
+  "author": "Septian Maulana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tianbuyung/electra-tech/issues"
+  },
+  "homepage": "https://github.com/tianbuyung/electra-tech#readme"
+}
