@@ -46,6 +46,30 @@ class Orders {
       next(error);
     }
   }
+
+  static async readOrderDetail(req, res, next) {
+    try {
+      const { userId } = req.user;
+      const { id } = req.params;
+
+      const order = await Order.findOne({
+        where: {
+          userId,
+          id,
+        },
+      });
+
+      res.status(200).json({
+        statusCode: 200,
+        message: "Order fetched successfully",
+        data: {
+          order,
+        },
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 module.exports = Orders;
