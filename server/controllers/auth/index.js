@@ -15,9 +15,9 @@ class Auth {
 
       res.status(201).json({
         statusCode: 201,
+        message: "Registration successfully",
         data: {
-          id: newUser.id,
-          email: newUser.email,
+          userId: newUser.id,
         },
       });
     } catch (error) {
@@ -55,8 +55,9 @@ class Auth {
 
       res.status(200).json({
         statusCode: 200,
+        message: "Login successfully",
         data: {
-          email: user.email,
+          userId: user.id,
           access_token: accessToken,
         },
       });
