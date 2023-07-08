@@ -25,7 +25,7 @@ const router = createRouter({
           component: CreateOrderView
         },
         {
-          path: 'orders/:id',
+          path: 'orders/:orderId',
           name: 'orderDetail',
           component: () => import('../views/orderDetailView.vue')
         }

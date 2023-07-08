@@ -10,7 +10,9 @@ export default {
 <template>
   <NavbarItem />
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <RouterView class="mt-10"></RouterView>
+    <div class="mt-10">
+      <RouterView></RouterView>
+    </div>
   </div>
 </template>
 

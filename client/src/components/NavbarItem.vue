@@ -9,7 +9,7 @@ import {
   MenuItem,
   MenuItems
 } from '@headlessui/vue'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { PlusIcon } from '@heroicons/vue/20/solid'
 
 import { useAuthStore } from '../stores/auth'
@@ -26,7 +26,6 @@ export default {
     MenuItem,
     MenuItems,
     Bars3Icon,
-    BellIcon,
     PlusIcon,
     XMarkIcon,
     RouterLink
@@ -91,14 +90,6 @@ export default {
             </RouterLink>
           </div>
           <div class="hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center">
-            <button
-              type="button"
-              class="rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-            >
-              <span class="sr-only">View notifications</span>
-              <BellIcon class="h-6 w-6" aria-hidden="true" />
-            </button>
-
             <!-- Profile dropdown -->
             <MenuDropdown as="div" class="relative ml-3">
               <div>
@@ -124,28 +115,6 @@ export default {
                 <MenuItems
                   class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                 >
-                  <MenuItem v-slot="{ active }">
-                    <RouterLink
-                      to="/"
-                      :class="[
-                        active ? 'bg-gray-100' : '',
-                        'block px-4 py-2 text-sm text-gray-700'
-                      ]"
-                    >
-                      Your Profile
-                    </RouterLink>
-                  </MenuItem>
-                  <MenuItem v-slot="{ active }">
-                    <RouterLink
-                      to="/"
-                      :class="[
-                        active ? 'bg-gray-100' : '',
-                        'block px-4 py-2 text-sm text-gray-700'
-                      ]"
-                    >
-                      Settings
-                    </RouterLink>
-                  </MenuItem>
                   <MenuItem v-slot="{ active }">
                     <RouterLink
                       to="/"
@@ -192,27 +161,8 @@ export default {
             <div class="text-base font-medium text-gray-800">Tom Cook</div>
             <div class="text-sm font-medium text-gray-500">tom@example.com</div>
           </div>
-          <button
-            type="button"
-            class="ml-auto flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-          >
-            <span class="sr-only">View notifications</span>
-            <BellIcon class="h-6 w-6" aria-hidden="true" />
-          </button>
         </div>
         <div class="mt-3 space-y-1">
-          <RouterLink
-            to="/"
-            class="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800 sm:px-6"
-          >
-            Your Profile
-          </RouterLink>
-          <RouterLink
-            to="/"
-            class="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800 sm:px-6"
-          >
-            Settings
-          </RouterLink>
           <DisclosureButton
             @click.prevent="logoutHandler"
             class="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800 sm:px-6"
