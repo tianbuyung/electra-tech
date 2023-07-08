@@ -1,11 +1,11 @@
 <script>
 export default {
-  name: 'App'
+  name: 'OrderView'
 }
 </script>
 
 <template>
-  <RouterView></RouterView>
+  <h1 class="text-3xl font-bold underline">OrderView</h1>
 </template>
 
 <style scoped></style>

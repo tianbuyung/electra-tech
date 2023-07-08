@@ -1,11 +1,11 @@
 <script>
 export default {
-  name: 'App'
+  name: 'LoginView'
 }
 </script>
 
 <template>
-  <RouterView></RouterView>
+  <h1 class="text-3xl font-bold underline">LoginView</h1>
 </template>
 
 <style scoped></style>
