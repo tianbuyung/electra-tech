@@ -53,7 +53,7 @@ export const useAuthStore = defineStore('auth', {
       }
     },
 
-    logout() {
+    logoutHandler() {
       localStorage.clear()
       this.userIsLoggedIn = !this.userIsLoggedIn
       this.router.push({ name: 'login' })

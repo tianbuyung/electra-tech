@@ -3,6 +3,7 @@ import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import CreateOrderView from '../views/CreateOrderView.vue'
 import NotFoundView from '../views/NotFoundView.vue'
+import LayoutView from '../views/LayoutView.vue'
 import { useAuthStore } from '../stores/auth'
 
 const router = createRouter({
@@ -10,18 +11,25 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'orders',
-      component: () => import('../views/OrdersView.vue')
-    },
-    {
-      path: '/orders',
-      name: 'createOrders',
-      component: CreateOrderView
-    },
-    {
-      path: '/orders/:id',
-      name: 'orderDetail',
-      component: () => import('../views/orderDetailView.vue')
+      name: 'layout',
+      component: LayoutView,
+      children: [
+        {
+          path: '',
+          name: 'orders',
+          component: () => import('../views/OrdersView.vue')
+        },
+        {
+          path: 'orders',
+          name: 'createOrders',
+          component: CreateOrderView
+        },
+        {
+          path: 'orders/:orderId',
+          name: 'orderDetail',
+          component: () => import('../views/orderDetailView.vue')
+        }
+      ]
     },
     {
       path: '/login',
