@@ -45,10 +45,18 @@ export const useAuthStore = defineStore('auth', {
           throw result.error.message || result.error.messages
         }
 
+        this.userIsLoggedIn = !this.userIsLoggedIn
+        localStorage.setItem('access_token', result.data.access_token)
         this.router.push({ name: 'orders' })
       } catch (error) {
         console.log(error)
       }
+    },
+
+    logout() {
+      localStorage.clear()
+      this.userIsLoggedIn = !this.userIsLoggedIn
+      this.router.push({ name: 'login' })
     }
   }
 })
