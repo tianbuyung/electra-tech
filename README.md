@@ -4,9 +4,8 @@ This full stack web application offers a seamless and efficient ordering system 
 
 ## Deployment
 
-Server: <https://electra-tech-server.tianweb.dev/>
-
-Client: <https://electra-tech.tianweb.dev/>
+- <a href="https://electra-tech-server.tianweb.dev/" target="_blank">Link to Server: https://electra-tech-server.tianweb.dev/</a>
+- <a href="https://electra-tech.tianweb.dev/" target="_blank">Link to Client: https://electra-tech.tianweb.dev/</a>
 
 ## Recommended First Setup
 
@@ -39,7 +38,7 @@ To run smoothly this application. Please install these tools in your local envir
 1. Mount to server directory using terminal
 
    ```sh
-   cd sever
+   cd server
    ```
 
 2. Install dependencies via terminal
@@ -74,15 +73,17 @@ To run smoothly this application. Please install these tools in your local envir
 
 #### Compile for Production
 
-1. Install and run docker in your instance
+1. Please make sure `NODE_ENV` is set to `production` in .env file
 
-2. Create images, containers and volumes
+2. Install and run docker in your instance
+
+3. Create images, containers and volumes
 
    ```sh
-   docker compose up
+   docker compose up -d
    ```
 
-3. Migrate model into your database
+4. Migrate model into your database
 
    ```sh
    docker exec node_app sequelize db:migrate --env production
